@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - SmartStay</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Реєстрація</h1>
+
+            <form id="registerForm">
+                
+                <input type="text" id="registerName" name="user_name" placeholder="Введіть ім’я" required>
+                
+                <input type="number" id="registerAge" name="user_age" placeholder="Введіть вік" required min="18">
+
+                <input type="email" id="registerEmail" name="user_email" placeholder="Введіть email" required>
+                
+                <input type="password" id="registerPassword" name="user_pass" placeholder="Введіть пароль" required>
+
+                <button type="submit" class="btn auth-btn">Зареєструватися</button>
+            </form>
+
+            <p id="registerMessage" class="auth-message"></p>
+
+            <p class="auth-link-text">
+                Вже є аккаунт?
+                <a href="/login">Увійти</a> </p>
+
+            <button id="btn_back_to_home" class="hero-buttons" type="button">
+                На головну
+            </button>
+        </div>
+    </div>
+
+    <script src="/script.js" defer></script>
+    <script src="/api.js" defer></script>
+</body>
+</html>

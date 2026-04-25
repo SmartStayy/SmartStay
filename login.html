@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід - SmartStay</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Вхід</h1>
+
+            <form id="loginForm">
+
+                <input type="email" id="loginEmail" name="user_email" placeholder="Введіть email">
+                <input type="password" id="loginPassword" name="user_pass" placeholder="Введіть пароль">
+                <button type="submit" class="btn auth-btn">Увійти</button>
+
+            </form>
+            
+            <p id="loginMessage" class="auth-message"></p>
+
+            <p class="auth-link-text">
+                Ще немає аккаунта?
+                <a href="/registration">Зареєструватися</a>
+            </p>
+
+            <button id="btn_back_to_home" class="hero-buttons" type="button">
+                На головну
+            </button>
+        </div>
+    </div>
+
+    <script src="/script.js" defer></script>
+    <script src="/api.js" defer></script>
+</body>
+</html>

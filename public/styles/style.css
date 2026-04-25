@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Bookman, URW Bookman L, serif;
+    background-color: #f4f6fb;
+    color: #1d1d1d;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(to right, #4facfe, #00c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.18);
+    padding: 45px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    color: white;
+    max-width: 850px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    width: 220px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.overlay h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.welcome-text {
+    margin-top: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #06187d;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 56px;
+    margin-bottom: 30px;
+    color: #0b3f84;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #0b7bd6;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #0862ab;
+    transform: translateY(-2px);
+}
+
+.back-btn {
+    margin-left: 10px;
+}
+
+.booking-search {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.search-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-item label {
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 18px;
+}
+
+.search-item input,
+.search-item select {
+    padding: 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 14px;
+    font-size: 16px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.search-item input:focus,
+.search-item select:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 6px rgba(0, 119, 204, 0.2);
+}
+
+.search-button-wrapper {
+    margin-top: 28px;
+    text-align: center;
+}
+
+/* Блок з параметрами пошуку */
+#search-info {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+    background: white;
+    padding: 18px 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Картки житла */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: #0b3f84;
+    margin-bottom: 14px;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.card button {
+    margin-top: 12px;
+}
+
+.card-images {
+    margin-bottom: 16px;
+}
+
+.card-images img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+.apartment-card {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.apartment-card h1 {
+    color: #0b3f84;
+    margin-bottom: 20px;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.apartment-main-image {
+    margin-bottom: 20px;
+}
+
+.apartment-main-image img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h1 {
+    color: #0b3f84;
+    margin-bottom: 20px;
+    font-size: 38px;
+    text-align: center;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 14px;
+    font-size: 16px;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #0b7bd6;
+    box-shadow: 0 0 6px rgba(11, 123, 214, 0.2);
+}
+
+.auth-btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.auth-message {
+    margin-top: 15px;
+    min-height: 22px;
+    font-size: 15px;
+    color: #c62828;
+    text-align: center;
+}
+
+.auth-link-text {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.auth-link-text a {
+    color: #0b7bd6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Нижні кнопки */
+.back-wrapper {
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        width: 170px;
+    }
+
+    .overlay h1 {
+        font-size: 42px;
+    }
+
+    .overlay p {
+        font-size: 20px;
+    }
+
+    .container h1 {
+        font-size: 38px;
+    }
+
+    .booking-search {
+        grid-template-columns: 1fr;
+    }
+
+    .card-images img {
+        height: 180px;
+    }
+
+    .apartment-main-image img {
+        height: 240px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .back-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

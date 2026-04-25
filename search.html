@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук житла - SmartStay</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Пошук житла</h1>
+
+        <div class="booking-search">
+            <div class="search-item">
+                <label for="region">Область</label>
+                <select id="region" onchange="updateCities()">
+                    <option value="">Оберіть область</option>
+                </select>
+            </div>
+
+            <div class="search-item">
+                <label for="city">Місто</label>
+                <select id="city">
+                    <option value="">Спочатку оберіть область</option>
+                </select>
+            </div>
+
+            <div class="search-item">
+                <label for="budget">Максимальний бюджет</label>
+                <input type="number" id="budget" placeholder="Наприклад: 15000">
+            </div>
+
+            <div class="search-item">
+                <label for="guests">Кількість людей</label>
+                <select id="guests">
+                    <option value="1">1 людина</option>
+                    <option value="2">2 людини</option>
+                    <option value="3">3 людини</option>
+                    <option value="4">4 людини</option>
+                    <option value="5">5+ людей</option>
+                </select>
+            </div>
+
+            <div class="search-item">
+                <label for="checkin">Дата заїзду</label>
+                <input type="date" id="checkin">
+            </div>
+
+            <div class="search-item">
+                <label for="days">Кількість днів</label>
+                <input type="number" id="days" min="1" placeholder="Наприклад: 3">
+            </div>
+        </div>
+
+        <div class="search-button-wrapper">
+            <button class="btn search-btn" onclick="saveSearch()">Знайти житло</button>
+        </div>
+    </div>
+
+   </body>
+</html>
