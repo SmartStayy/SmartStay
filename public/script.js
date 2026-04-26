@@ -2,7 +2,7 @@
 const buttonTologin = document.querySelector('#btn_go_to_login');
 if (buttonTologin) {
     buttonTologin.addEventListener('click', (e) => {
-        window.location.href = '/login';
+        window.location.href = 'api/auth/login';
     });
 }
 

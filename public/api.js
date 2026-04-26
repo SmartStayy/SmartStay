@@ -19,13 +19,13 @@ const API = {
     },
 
     async login(email, password) {
-        return await this.sendJSON('/login', { 
+        return await this.sendJSON('/api/auth/login', { 
             email: email, 
             pass: password 
         });
     },
 
     async register(userData) {
-        return await this.sendJSON('/register', userData);
+        return await this.sendJSON('/api/auth/register', userData);
     },
 };
