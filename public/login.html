@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вхід - SmartStay</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
+
 <body>
     <div class="auth-container">
         <div class="auth-card">
@@ -18,7 +20,7 @@
                 <button type="submit" class="btn auth-btn">Увійти</button>
 
             </form>
-            
+
             <p id="loginMessage" class="auth-message"></p>
 
             <p class="auth-link-text">
@@ -26,13 +28,16 @@
                 <a href="/api/auth/register">Зареєструватися</a>
             </p>
 
-            <button id="btn_back_to_home" class="hero-buttons" type="button">
-                На головну
-            </button>
+            <div class="back-wrapper">
+                <button id="btn_back_to_home" class="btn" type="button">
+                    На головну
+                </button>
+            </div>
         </div>
     </div>
 
     <script src="/script.js" defer></script>
     <script src="/api.js" defer></script>
 </body>
+
 </html>
