@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результати пошуку - SmartStay</title>
+<link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-logo">SmartStay</div>
+
+        <div class="nav-links">
+            <a href="/">Головна</a>
+            <a href="/search">Пошук житла</a>
+            <a href="#">Мої бронювання</a>
+            <a href="#">Профіль</a>
+            <a href="/api/auth/login">Вийти</a>
+        </div>
+    </nav>
+
+    <div class="results-layout">
+
+        <aside class="filters-sidebar">
+            <h2>Фільтри</h2>
+
+            <div class="filter-block">
+                <h3>Тип житла</h3>
+                <label><input type="checkbox"> Готель</label>
+                <label><input type="checkbox"> Квартира</label>
+                <label><input type="checkbox"> Будинок</label>
+                <label><input type="checkbox"> Хостел</label>
+            </div>
+
+            <div class="filter-block">
+                <h3>Ціна за ніч</h3>
+                <label>Від <input type="number" placeholder="0"></label>
+                <label>До <input type="number" placeholder="15000"></label>
+            </div>
+
+            <div class="filter-block">
+                <h3>Зручності</h3>
+                <label><input type="checkbox"> Wi-Fi</label>
+                <label><input type="checkbox"> Парковка</label>
+                <label><input type="checkbox"> Кухня</label>
+                <label><input type="checkbox"> Кондиціонер</label>
+                <label><input type="checkbox"> Пральна машинка</label>
+            </div>
+
+            <div class="filter-block">
+                <h3>Оцінка</h3>
+                <label><input type="radio" name="rate"> 1–3</label>
+                <label><input type="radio" name="rate"> 3–6</label>
+                <label><input type="radio" name="rate"> 7–9</label>
+                <label><input type="radio" name="rate"> 10</label>
+            </div>
+
+            <div class="filter-block">
+                <h3>Кількість кімнат</h3>
+                <label><input type="radio" name="rooms"> 1</label>
+                <label><input type="radio" name="rooms"> 2</label>
+                <label><input type="radio" name="rooms"> 3+</label>
+            </div>
+        </aside>
+
+        <main class="results-content">
+            <h1>Картки квартир</h1>
+
+            <p id="selectedSearch" class="selected-search"></p>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-images">
+                        <img src="/images/apartment1.jpg" alt="Квартира">
+                    </div>
+                    <h3>Затишна квартира в центрі</h3>
+                    <p><b>Ціна:</b> 1200 грн / ніч</p>
+                    <p><b>Кімнат:</b> 2</p>
+                    <p><b>Зручності:</b> Wi-Fi, кухня, пральна машинка</p>
+                    <button class="btn">Детальніше</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-images">
+                        <img src="/images/apartment2.jpg" alt="Квартира">
+                    </div>
+                    <h3>Сучасний готель біля вокзалу</h3>
+                    <p><b>Ціна:</b> 1800 грн / ніч</p>
+                    <p><b>Кімнат:</b> 1</p>
+                    <p><b>Зручності:</b> Wi-Fi, парковка, кондиціонер</p>
+                    <button class="btn">Детальніше</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-images">
+                        <img src="/images/apartment3.jpg" alt="Квартира">
+                    </div>
+                    <h3>Будинок для сімейного відпочинку</h3>
+                    <p><b>Ціна:</b> 2500 грн / ніч</p>
+                    <p><b>Кімнат:</b> 3+</p>
+                    <p><b>Зручності:</b> Wi-Fi, кухня, парковка</p>
+                    <button class="btn">Детальніше</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/results.js"></script>
+</body>
+</html>

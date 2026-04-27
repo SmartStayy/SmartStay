@@ -64,7 +64,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 40px auto;
     padding: 20px;
 }
@@ -337,7 +337,252 @@ body {
     }
 
     .btn {
-    width: 100%;
-    /* text-align: center; */
+        width: 100%;
+    }
 }
+/* ЗМІНА: стилі сторінки результатів */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 60px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0b3f84;
+}
+
+.nav-links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0b3f84;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.results-layout {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 35px;
+    max-width: 1350px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+.filters-sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    align-self: start;
+}
+
+.filters-sidebar h2 {
+    color: #0b3f84;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.filter-block {
+    margin-bottom: 24px;
+}
+
+.filter-block h3 {
+    color: #0077cc;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.filter-block label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 16px;
+}
+
+.results-content h1 {
+    color: #0b3f84;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.selected-search {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+    .results-layout {
+        grid-template-columns: 1fr;
+    }
+}
+/* ЗМІНА: стилі для верхнього меню сторінки результатів */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background: white;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0b3f84;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0b3f84;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.nav-links a:hover {
+    color: #0b7bd6;
+}
+
+/* ЗМІНА: красиве верхнє меню для сторінки результатів */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 60px;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0b3f84;
+}
+
+.nav-links {
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0b3f84;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.nav-links a:hover {
+    color: #0b7bd6;
+}
+
+/* ЗМІНА: сторінка результатів ділиться на фільтри і картки */
+.results-layout {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 35px;
+    max-width: 1350px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+/* ЗМІНА: красива ліва панель фільтрів */
+.filters-sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    align-self: start;
+}
+
+.filters-sidebar h2 {
+    color: #0b3f84;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.filter-block {
+    margin-bottom: 24px;
+}
+
+.filter-block h3 {
+    color: #0077cc;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.filter-block label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 16px;
+}
+
+.filter-block input[type="number"] {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    border-radius: 12px;
+    border: 1px solid #cfcfcf;
+}
+
+/* ЗМІНА: права частина з результатами */
+.results-content h1 {
+    color: #0b3f84;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.selected-search {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    font-size: 17px;
+}
+
+/* ЗМІНА: щоб картки не були такими величезними */
+.results-content .cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.results-content .card {
+    padding: 20px;
+}
+
+.results-content .card h3 {
+    font-size: 24px;
+}
+
+/* ЗМІНА: адаптація під телефон */
+@media (max-width: 900px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .results-layout {
+        grid-template-columns: 1fr;
+    }
 }

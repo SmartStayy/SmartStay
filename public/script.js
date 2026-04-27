@@ -13,6 +13,13 @@ if (buttonBackToHome) {
     });
 }
 
+const buttonToSearch = document.querySelector('#btn_search');
+if (buttonToSearch) {
+    buttonToSearch.addEventListener('click', (e) => {
+        window.location.href = '/results';
+    });
+}
+
 (function() {
 
     // ==== Log in ====

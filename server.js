@@ -27,6 +27,10 @@ app.get('/search', verifyToken, (req, res) => {
     res.sendFile(path.join(__dirname, 'public/search.html')); 
 });
 
+app.get('/results', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/results.html')); 
+});
+
 app.listen(PORT, () => {
     console.log(`Сервер запущено: http://localhost:${PORT}`);
 });
