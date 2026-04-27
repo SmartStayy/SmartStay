@@ -1,7 +1,0 @@
-{"timestamp":"2026-04-27T08:59:54.009Z","action":"REGISTER_SUCCESS","email":"d@fg","ip":"::ffff:127.0.0.1","reason":"Успішна реєстрація"}
-{"timestamp":"2026-04-27T09:01:02.536Z","action":"REGISTER_FAILED","email":"d@fg","ip":"::ffff:127.0.0.1","reason":"Спроба реєстрації з існуючим email"}
-{"timestamp":"2026-04-27T09:01:25.551Z","action":"LOGIN_FAILED","email":"d@fg","ip":"::ffff:127.0.0.1","reason":"Невірний пароль"}
-{"timestamp":"2026-04-27T09:01:45.651Z","action":"LOGIN_FAILED","email":"d@f","ip":"::ffff:127.0.0.1","reason":"Користувача не знайдено"}
-{"timestamp":"2026-04-27T09:01:57.673Z","action":"LOGIN_SUCCESS","email":"d@fg","ip":"::ffff:127.0.0.1","reason":"Успішна авторизація"}
-{"timestamp":"2026-04-27T09:47:47.754Z","action":"REGISTER_SUCCESS","email":"f@f","ip":"::ffff:127.0.0.1","reason":"Успішна реєстрація"}
-{"timestamp":"2026-04-27T09:49:29.075Z","action":"LOGIN_SUCCESS","email":"f@f","ip":"::ffff:127.0.0.1","reason":"Успішна авторизація"}
