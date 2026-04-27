@@ -289,7 +289,6 @@ body {
     font-weight: bold;
 }
 
-/* Нижні кнопки */
 .back-wrapper {
     margin-top: 30px;
     text-align: center;
@@ -328,11 +327,6 @@ body {
         height: 240px;
     }
 
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
     .hero-buttons {
         flex-direction: column;
     }
@@ -341,4 +335,9 @@ body {
         margin-left: 0;
         margin-top: 10px;
     }
+
+    .btn {
+    width: 100%;
+    /* text-align: center; */
+}
 }

@@ -1,4 +1,5 @@
 const path = require('path');
+const bcrypt = require('bcrypt');
 const config = require('config');
 
 const dbConfig = config.get('db');
@@ -19,7 +20,7 @@ exports.loginUser = async (req, res) => {
     try {
         const user = await User.findByEmail(email);
 
-        if (user && user.password === pass) {
+        if (user && await bcrypt.compare(pass, user.password)) {
             response.success = true;
             response.message = 'Вхід успішний!';
         } else {
@@ -43,7 +44,10 @@ exports.registerUser = async (req, res) => {
         if (existingUser) {
             response.message = "Цей email вже зареєстрований!";
         } else {
-            const result = await User.create(name, age, email, password);
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+            const result = await User.create(name, age, email, hashedPassword);
 
             if (result.insertId) {
                 response.success = true;
