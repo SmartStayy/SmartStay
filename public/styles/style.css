@@ -426,7 +426,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
-/* ЗМІНА: стилі для верхнього меню сторінки результатів */
+
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -556,9 +556,8 @@ body {
     font-size: 17px;
 }
 
-/* ЗМІНА: щоб картки не були такими величезними */
 .results-content .cards {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .results-content .card {
@@ -569,8 +568,265 @@ body {
     font-size: 24px;
 }
 
-/* ЗМІНА: адаптація під телефон */
+.detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+}
+
+/* Галерея */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-photo-wrapper img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.thumbnails img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.thumbnails img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Інформація */
+.info-section h1 {
+    color: #0b3f84;
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+.address {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.rating-badge {
+    display: inline-block;
+    background: #0b7bd6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.description-block, .amenities-block {
+    margin-bottom: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.description-block h3, .amenities-block h3 {
+    color: #0077cc;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.description-block p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.amenities-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.amenities-list li {
+    font-size: 16px;
+}
+
+/* Картка бронювання */
+.booking-card {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 40px;
+    text-align: center;
+}
+
+.booking-card .price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0b3f84;
+    margin-bottom: 20px;
+}
+
+.booking-card .price span {
+    font-size: 18px;
+    color: #666;
+    font-weight: normal;
+}
+
+.btn-book {
+    width: 100%;
+    background: #0b7bd6;
+    color: white;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background: #0862ab;
+}
+
+
+.top-search-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.main-search-input {
+    flex-grow: 1;
+    padding: 14px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.main-search-input:focus {
+    border-color: #0b7bd6;
+    box-shadow: 0 0 0 3px rgba(11, 123, 214, 0.1);
+}
+
+.top-search-bar .btn {
+    padding: 14px 35px;
+}
+
+.filter-select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    border-radius: 12px;
+    border: 1px solid #cfcfcf;
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.filter-select:focus {
+    border-color: #0b7bd6;
+}
+
+.btn-apply-filters {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.empty-state {
+    text-align: center;
+    background: white;
+    padding: 60px 20px;
+    border-radius: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.empty-state h3 {
+    color: #0b3f84;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #0b7bd6;
+    border: 2px solid #0b7bd6;
+}
+
+.btn-outline:hover {
+    background: #0b7bd6;
+    color: white;
+}
+
+.amenities-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.amenities-checklist label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.amenities-checklist input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
 @media (max-width: 900px) {
+
+     .detail-container {
+        grid-template-columns: 1fr;
+    }
+
     .top-nav {
         flex-direction: column;
         gap: 15px;
@@ -585,4 +841,76 @@ body {
     .results-layout {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    .top-search-bar {
+        flex-direction: column;
+    }
+    .top-search-bar .btn {
+        width: 100%;
+    }
+}
+
+#btn-book-apartment {
+    background: linear-gradient(135deg, #0b7bd6 0%, #085a9e 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(11, 123, 214, 0.3);
+    width: 100%;
+    margin-top: 20px;
+}
+
+#bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+#btn-book-apartment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 123, 214, 0.4);
+}
+
+#btn-book-apartment.loading {
+    background: #8aa6c1;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#btn-book-apartment.success {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-cancel:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-cancel:disabled {
+    border-color: #6c757d;
+    color: #6c757d;
+    cursor: not-allowed;
+    background: transparent;
 }

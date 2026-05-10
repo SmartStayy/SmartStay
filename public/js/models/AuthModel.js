@@ -1,5 +1,5 @@
-
-const API = {
+export default class AuthModel {
+   
     async sendJSON(url, data) {
         try {
             const response = await fetch(url, {
@@ -16,16 +16,17 @@ const API = {
             console.error("Помилка запиту до сервера:", error);
             return { success: false, message: "Помилка з'єднання з сервером" };
         }
-    },
+    }
 
     async login(email, password) {
         return await this.sendJSON('/api/auth/login', { 
             email: email, 
             pass: password 
         });
-    },
+    }
 
     async register(userData) {
         return await this.sendJSON('/api/auth/register', userData);
-    },
-};
+    }
+
+}

@@ -3,66 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пошук житла - SmartStay</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>Результати пошуку - SmartStay</title>
+<link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Пошук житла</h1>
 
-        <div class="booking-search">
-            <div class="search-item">
-                <label for="region">Область</label>
-                <select id="region" onchange="updateCities()">
-                    <option value="">Оберіть область</option>
+    <nav class="top-nav">
+        <div class="nav-logo">SmartStay</div>
+
+        <div class="nav-links">
+            <a href="/">Головна</a>
+            <a href="/search">Пошук житла</a>
+            <a href="/profile">Профіль</a>
+            <a href="/login">Вийти</a>
+        </div>
+    </nav>
+
+    <div class="results-layout">
+    <aside class="filters-sidebar">
+        <h2>Фільтри</h2>
+        <form id="filter-form">
+            <div class="filter-block">
+                <h3>Ціна за ніч (грн)</h3>
+                <label>Від: <input type="number" id="filter-price-min" placeholder="0" min="0"></label>
+                <label>До: <input type="number" id="filter-price-max" placeholder="10000" min="0"></label>
+            </div>
+            
+            <div class="filter-block">
+                <h3>Тип житла</h3>
+                <select id="filter-type" class="filter-select">
+                    <option value="">Будь-який</option>
+                    <option value="apartment">Квартира</option>
+                    <option value="house">Будинок</option>
+                    <option value="hotel">Готель</option>
+                    <option value="hostel">Хостел</option>
                 </select>
             </div>
 
-            <div class="search-item">
-                <label for="city">Місто</label>
-                <select id="city">
-                    <option value="">Спочатку оберіть область</option>
+            <div class="filter-block">
+                <h3>Кімнат</h3>
+                <input type="number" id="filter-rooms" min="1" placeholder="Будь-яка кількість">
+            </div>
+
+            <div class="filter-block">
+                <h3>Мінімальний рейтинг</h3>
+                <select id="filter-rating" class="filter-select">
+                    <option value="">Будь-який</option>
+                    <option value="9">9+ Чудово</option>
+                    <option value="8">8+ Дуже добре</option>
+                    <option value="7">7+ Добре</option>
                 </select>
             </div>
-
-            <!-- <div class="search-item">
-                <label for="budget">Максимальний бюджет</label>
-                <input type="number" id="budget" placeholder="Наприклад: 15000">
-            </div> -->
-
-            <div class="search-item">
-                <label for="guests">Кількість людей</label>
-                <select id="guests">
-                    <option value="1">1 людина</option>
-                    <option value="2">2 людини</option>
-                    <option value="3">3 людини</option>
-                    <option value="4">4 людини</option>
-                    <option value="5">5+ людей</option>
-                </select>
+            
+            <div class="filter-block">
+                <h3>Зручності</h3>
+                <div class="amenities-checklist">
+                    <label><input type="checkbox" name="amenity" value="1"> Wi-Fi</label>
+                    <label><input type="checkbox" name="amenity" value="2"> Кондиціонер</label>
+                    <label><input type="checkbox" name="amenity" value="3"> Парковка</label>
+                    <label><input type="checkbox" name="amenity" value="4"> Пральна машина</label>
+                </div>
             </div>
 
-            <div class="search-item">
-                <label for="checkin">Дата заїзду</label>
-                <input type="date" id="checkin">
-            </div>
+            <button type="submit" class="btn btn-apply-filters">Застосувати фільтри</button>
+        </form>
+    </aside>
 
-            <div class="search-item">
-                <label for="checkout">Дата виїзду</label>
-                <input type="date" id="checkout">
-            </div>
-
-
-            <!-- <div class="search-item">
-                <label for="days">Кількість днів</label>
-                <input type="number" id="days" min="1" placeholder="Наприклад: 3">
-            </div> -->
+    <main class="results-content">
+        
+        <div class="top-search-bar">
+            <input type="text" id="search-city" placeholder="Куди ви плануєте поїхати? (напр. Київ, Львів)" class="main-search-input">
+            <button id="btn-main-search" class="btn">Знайти</button>
         </div>
 
-        <div class="search-button-wrapper">
-            <button id="btn_search" class="btn search-btn">Знайти житло</button>
-        </div>
-    </div>
+        <h1>Доступні варіанти</h1>
 
-    <script src="script.js"></script>
+        <div class="cards" id="apartments-grid">
+            </div>
+
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <div class="empty-icon">🔍</div>
+            <h3>За вашим запитом нічого не знайдено</h3>
+            <p>Спробуйте змінити місто, розширити діапазон цін або прибрати деякі фільтри.</p>
+            <button id="btn-reset-filters" class="btn btn-outline">Скинути всі фільтри</button>
+        </div>
+
+    </main>
+</div>
+
+    <script type="module" src="/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі житла - SmartStay</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-logo">SmartStay</div>
+        <div class="nav-links">
+            <a href="/">Головна</a>
+            <a href="/search">Пошук</a>
+            <a href="/profile">Профіль</a>
+            <a href="/login">Вийти</a>
+        </div>
+    </nav>
+
+    <div class="container detail-container">
+        <div id="apartment-gallery" class="gallery">
+            <div class="main-photo-wrapper">
+                <img id="main-photo" src="" alt="Головне фото">
+            </div>
+            <div id="thumbnails" class="thumbnails">
+                </div>
+        </div>
+
+        <div class="info-section">
+            <h1 id="apt-title">Завантаження...</h1>
+            <p class="address"><b id="apt-city"></b>, <span id="apt-address"></span></p>
+            
+            <div class="rating-badge">Оцінка: <span id="apt-rating"></span> / 10</div>
+
+            <div class="description-block">
+                <h3>Про це житло</h3>
+                <p id="apt-description"></p>
+            </div>
+
+            <div class="amenities-block">
+                <h3>Зручності</h3>
+                <ul id="amenities-list">
+                    </ul>
+            </div>
+
+            <div class="booking-card">
+                <p class="price"><span id="apt-price"></span> грн <span>/ ніч</span></p>
+               <button id="btn-book-apartment" class="btn">Забронювати житло</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/app.js"></script>
+</body>
+</html>

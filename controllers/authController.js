@@ -7,14 +7,6 @@ const logAuthEvent = require('../utils/logger');
 const dbConfig = config.get('db');
 const User = require('../model/userModel'); 
 
-exports.getLoginPage = (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/login.html'));
-};
-
-exports.getRegisterPage = (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/register.html'));
-};
-
 exports.loginUser = async (req, res) => {
     const { email, pass } = req.body;
     const ip = req.ip || req.connection.remoteAddress;
@@ -56,6 +48,22 @@ exports.registerUser = async (req, res) => {
     let response = { success: false, message: '' };
 
     try {
+
+        if (password.length < 8) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Пароль має містити мінімум 8 символів' 
+            });
+        }
+
+        const hasNumber = /\d/.test(password);
+        if (!hasNumber) {
+            return res.status(400).json({
+                success: false,
+                message: 'Пароль має містити хоча б одну цифру'
+            });
+        }
+
         const existingUser = await User.findByEmail(email);
 
         if (existingUser) {
