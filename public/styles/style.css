@@ -1,3 +1,6 @@
+/* =========================================
+   1. БАЗОВЫЕ СТИЛИ И КОНТЕЙНЕРЫ
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +11,72 @@ body {
     font-family: Bookman, URW Bookman L, serif;
     background-color: #f4f6fb;
     color: #1d1d1d;
+
 }
 
+.container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 56px;
+    margin-bottom: 30px;
+    color: #0b3f84;
+}
+
+/* =========================================
+   2. НАВИГАЦИОННАЯ ПАНЕЛЬ (HEADER)
+   ========================================= */
+.top-nav {
+    position: sticky;       
+    top: 0;                
+    z-index: 1000;         
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: #ffffff; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0b3f84;
+}
+
+.nav-logo a {
+    text-decoration: none; 
+    color: inherit;        
+    outline: none;
+}
+
+.nav-logo a:hover {
+    opacity: 0.85; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0b3f84;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.nav-links a:hover {
+    color: #0b7bd6;
+}
+
+/* =========================================
+   3. ГЛАВНАЯ СТРАНИЦА (HERO SECTION)
+   ========================================= */
 .hero {
     min-height: 100vh;
     background: linear-gradient(to right, #4facfe, #00c6ff);
@@ -63,168 +130,9 @@ body {
     color: #06187d;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.container h1 {
-    font-size: 56px;
-    margin-bottom: 30px;
-    color: #0b3f84;
-}
-
-.btn {
-    display: inline-block;
-    text-decoration: none;
-    background: #0b7bd6;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 14px;
-    font-size: 17px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background: #0862ab;
-    transform: translateY(-2px);
-}
-
-.back-btn {
-    margin-left: 10px;
-}
-
-.booking-search {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-    background: white;
-    padding: 30px;
-    border-radius: 24px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.search-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.search-item label {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 18px;
-}
-
-.search-item input,
-.search-item select {
-    padding: 15px;
-    border: 1px solid #cfcfcf;
-    border-radius: 14px;
-    font-size: 16px;
-    background-color: #fff;
-    width: 100%;
-}
-
-.search-item input:focus,
-.search-item select:focus {
-    outline: none;
-    border-color: #0077cc;
-    box-shadow: 0 0 6px rgba(0, 119, 204, 0.2);
-}
-
-.search-button-wrapper {
-    margin-top: 28px;
-    text-align: center;
-}
-
-/* Блок з параметрами пошуку */
-#search-info {
-    margin-bottom: 30px;
-    font-size: 18px;
-    line-height: 1.6;
-    background: white;
-    padding: 18px 22px;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-}
-
-/* Картки житла */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 22px;
-}
-
-.card {
-    background: white;
-    border-radius: 24px;
-    padding: 24px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-}
-
-.card h3 {
-    color: #0b3f84;
-    margin-bottom: 14px;
-    font-size: 26px;
-    line-height: 1.2;
-}
-
-.card p {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    font-size: 16px;
-}
-
-.card button {
-    margin-top: 12px;
-}
-
-.card-images {
-    margin-bottom: 16px;
-}
-
-.card-images img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
-}
-
-.apartment-card {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.apartment-card h1 {
-    color: #0b3f84;
-    margin-bottom: 20px;
-    font-size: 42px;
-    line-height: 1.2;
-}
-
-.apartment-main-image {
-    margin-bottom: 20px;
-}
-
-.apartment-main-image img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 18px;
-    display: block;
-}
-
+/* =========================================
+   4. АВТОРИЗАЦИЯ И РЕГИСТРАЦИЯ
+   ========================================= */
 .auth-container {
     min-height: 100vh;
     display: flex;
@@ -264,11 +172,6 @@ body {
     box-shadow: 0 0 6px rgba(11, 123, 214, 0.2);
 }
 
-.auth-btn {
-    width: 100%;
-    margin-top: 5px;
-}
-
 .auth-message {
     margin-top: 15px;
     min-height: 22px;
@@ -289,86 +192,9 @@ body {
     font-weight: bold;
 }
 
-.back-wrapper {
-    margin-top: 30px;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .overlay {
-        padding: 30px 20px;
-    }
-
-    .logo {
-        width: 170px;
-    }
-
-    .overlay h1 {
-        font-size: 42px;
-    }
-
-    .overlay p {
-        font-size: 20px;
-    }
-
-    .container h1 {
-        font-size: 38px;
-    }
-
-    .booking-search {
-        grid-template-columns: 1fr;
-    }
-
-    .card-images img {
-        height: 180px;
-    }
-
-    .apartment-main-image img {
-        height: 240px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .back-btn {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}
-/* ЗМІНА: стилі сторінки результатів */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 60px;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-}
-
-.nav-logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #0b3f84;
-}
-
-.nav-links {
-    display: flex;
-    gap: 26px;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #0b3f84;
-    font-weight: bold;
-    font-size: 17px;
-}
-
+/* =========================================
+   5. ПОИСК И ФИЛЬТРЫ (РЕЗУЛЬТАТЫ)
+   ========================================= */
 .results-layout {
     display: grid;
     grid-template-columns: 290px 1fr;
@@ -376,36 +202,6 @@ body {
     max-width: 1350px;
     margin: 35px auto;
     padding: 0 25px;
-}
-
-.filters-sidebar {
-    background: white;
-    padding: 25px;
-    border-radius: 24px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    align-self: start;
-}
-
-.filters-sidebar h2 {
-    color: #0b3f84;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.filter-block {
-    margin-bottom: 24px;
-}
-
-.filter-block h3 {
-    color: #0077cc;
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.filter-block label {
-    display: block;
-    margin-bottom: 9px;
-    font-size: 16px;
 }
 
 .results-content h1 {
@@ -414,94 +210,35 @@ body {
     margin-bottom: 15px;
 }
 
-.selected-search {
-    background: white;
-    padding: 16px 20px;
-    border-radius: 16px;
+.top-search-bar {
+    display: flex;
+    gap: 15px;
     margin-bottom: 25px;
-}
-
-@media (max-width: 900px) {
-    .results-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 60px;
     background: white;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
-.nav-logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #0b3f84;
+.main-search-input {
+    flex-grow: 1;
+    padding: 14px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
 }
 
-.nav-links {
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
+.main-search-input:focus {
+    border-color: #0b7bd6;
+    box-shadow: 0 0 0 3px rgba(11, 123, 214, 0.1);
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #0b3f84;
-    font-weight: bold;
-    font-size: 17px;
+.top-search-bar .btn {
+    padding: 14px 35px;
 }
 
-.nav-links a:hover {
-    color: #0b7bd6;
-}
-
-/* ЗМІНА: красиве верхнє меню для сторінки результатів */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 60px;
-    background: #ffffff;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-}
-
-.nav-logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #0b3f84;
-}
-
-.nav-links {
-    display: flex;
-    gap: 26px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #0b3f84;
-    font-weight: bold;
-    font-size: 17px;
-}
-
-.nav-links a:hover {
-    color: #0b7bd6;
-}
-
-/* ЗМІНА: сторінка результатів ділиться на фільтри і картки */
-.results-layout {
-    display: grid;
-    grid-template-columns: 290px 1fr;
-    gap: 35px;
-    max-width: 1350px;
-    margin: 35px auto;
-    padding: 0 25px;
-}
-
-/* ЗМІНА: красива ліва панель фільтрів */
 .filters-sidebar {
     background: white;
     padding: 25px;
@@ -540,11 +277,40 @@ body {
     border: 1px solid #cfcfcf;
 }
 
-/* ЗМІНА: права частина з результатами */
-.results-content h1 {
-    color: #0b3f84;
-    font-size: 42px;
-    margin-bottom: 15px;
+.filter-select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    border-radius: 12px;
+    border: 1px solid #cfcfcf;
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.filter-select:focus {
+    border-color: #0b7bd6;
+}
+
+.amenities-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.amenities-checklist label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.amenities-checklist input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
 
 .selected-search {
@@ -556,16 +322,116 @@ body {
     font-size: 17px;
 }
 
+/* Старый блок поиска на главной (оставлен для обратной совместимости) */
+.booking-search {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+.search-item { display: flex; flex-direction: column; gap: 8px; }
+.search-item label { font-weight: bold; color: #0077cc; font-size: 18px; }
+.search-item input, .search-item select { padding: 15px; border: 1px solid #cfcfcf; border-radius: 14px; font-size: 16px; background-color: #fff; width: 100%; }
+.search-item input:focus, .search-item select:focus { outline: none; border-color: #0077cc; box-shadow: 0 0 6px rgba(0, 119, 204, 0.2); }
+.search-button-wrapper { margin-top: 28px; text-align: center; }
+#search-info { margin-bottom: 30px; font-size: 18px; line-height: 1.6; background: white; padding: 18px 22px; border-radius: 16px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+
+/* =========================================
+   6. КАРТОЧКИ КВАРТИР И БРОНИРОВАНИЙ
+   ========================================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+}
+
 .results-content .cards {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+#bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
 }
 
 .results-content .card {
     padding: 20px;
 }
 
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: #0b3f84;
+    margin-bottom: 14px;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
 .results-content .card h3 {
     font-size: 24px;
+}
+
+.card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.card button {
+    margin-top: 12px;
+}
+
+.card-images {
+    margin-bottom: 16px;
+}
+
+.card-images img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+/* =========================================
+   7. ДЕТАЛЬНАЯ СТРАНИЦА КВАРТИРЫ
+   ========================================= */
+.apartment-card {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.apartment-card h1 {
+    color: #0b3f84;
+    margin-bottom: 20px;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.apartment-main-image {
+    margin-bottom: 20px;
+}
+
+.apartment-main-image img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
 }
 
 .detail-container {
@@ -577,7 +443,6 @@ body {
     gap: 40px;
 }
 
-/* Галерея */
 .gallery {
     display: flex;
     flex-direction: column;
@@ -615,7 +480,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Інформація */
 .info-section h1 {
     color: #0b3f84;
     font-size: 38px;
@@ -668,14 +532,13 @@ body {
     font-size: 16px;
 }
 
-/* Картка бронювання */
 .booking-card {
     background: white;
     padding: 30px;
     border-radius: 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     position: sticky;
-    top: 40px;
+    top: 100px; /* Немного опустили, чтобы не слипалось со sticky nav */
     text-align: center;
 }
 
@@ -690,6 +553,84 @@ body {
     font-size: 18px;
     color: #666;
     font-weight: normal;
+}
+
+/* =========================================
+   8. КНОПКИ
+   ========================================= */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #0b7bd6;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #0862ab;
+    transform: translateY(-2px);
+}
+
+.back-btn {
+    margin-left: 10px;
+}
+
+.back-wrapper {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.auth-btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.btn-apply-filters {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #0b7bd6;
+    border: 2px solid #0b7bd6;
+}
+
+.btn-outline:hover {
+    background: #0b7bd6;
+    color: white;
+}
+
+.btn-danger-outline {
+    display: block;                  
+    width: 100%;                     
+    box-sizing: border-box;          
+    padding: 12px 20px;              
+    font-size: 16px;                 
+    font-weight: bold;               
+    text-align: center;
+    border-radius: 12px;              
+    background-color: transparent;
+    color: #dc3545;                  
+    border: 1px solid #dc3545;
+    cursor: pointer;
+    transition: all 0.3s ease;       
+}
+
+.btn-danger-outline:hover {
+    background-color: #dc3545;
+    color: #ffffff;                  
+    border-color: #dc3545;
+}
+
+#btn-reset-filters {
+    margin-top: 12px;     
 }
 
 .btn-book {
@@ -709,149 +650,6 @@ body {
     background: #0862ab;
 }
 
-
-.top-search-bar {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-    background: white;
-    padding: 15px;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-}
-
-.main-search-input {
-    flex-grow: 1;
-    padding: 14px 20px;
-    border: 1px solid #cfcfcf;
-    border-radius: 12px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.main-search-input:focus {
-    border-color: #0b7bd6;
-    box-shadow: 0 0 0 3px rgba(11, 123, 214, 0.1);
-}
-
-.top-search-bar .btn {
-    padding: 14px 35px;
-}
-
-.filter-select {
-    width: 100%;
-    margin-top: 6px;
-    padding: 11px;
-    border-radius: 12px;
-    border: 1px solid #cfcfcf;
-    background-color: white;
-    font-size: 15px;
-    outline: none;
-}
-
-.filter-select:focus {
-    border-color: #0b7bd6;
-}
-
-.btn-apply-filters {
-    width: 100%;
-    margin-top: 15px;
-}
-
-.empty-state {
-    text-align: center;
-    background: white;
-    padding: 60px 20px;
-    border-radius: 24px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    margin-top: 20px;
-}
-
-.empty-icon {
-    font-size: 64px;
-    margin-bottom: 20px;
-    opacity: 0.8;
-}
-
-.empty-state h3 {
-    color: #0b3f84;
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.empty-state p {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 25px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn-outline {
-    background: transparent;
-    color: #0b7bd6;
-    border: 2px solid #0b7bd6;
-}
-
-.btn-outline:hover {
-    background: #0b7bd6;
-    color: white;
-}
-
-.amenities-checklist {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.amenities-checklist label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.amenities-checklist input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-@media (max-width: 900px) {
-
-     .detail-container {
-        grid-template-columns: 1fr;
-    }
-
-    .top-nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .results-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-search-bar {
-        flex-direction: column;
-    }
-    .top-search-bar .btn {
-        width: 100%;
-    }
-}
-
 #btn-book-apartment {
     background: linear-gradient(135deg, #0b7bd6 0%, #085a9e 100%);
     color: white;
@@ -865,12 +663,6 @@ body {
     box-shadow: 0 4px 15px rgba(11, 123, 214, 0.3);
     width: 100%;
     margin-top: 20px;
-}
-
-#bookings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
 }
 
 #btn-book-apartment:hover {
@@ -913,4 +705,250 @@ body {
     color: #6c757d;
     cursor: not-allowed;
     background: transparent;
+}
+
+/* =========================================
+   9. СОСТОЯНИЕ "ПУСТО" (EMPTY STATE)
+   ========================================= */
+.empty-state {
+    text-align: center;
+    background: white;
+    padding: 60px 20px;
+    border-radius: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.empty-state h3 {
+    color: #0b3f84;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   10. ФУТЕР (FOOTER)
+   ========================================= */
+.main-footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #007bff; 
+}
+
+.footer-logo a {
+    text-decoration: none; 
+    color: inherit;        
+    outline: none;
+    color: #007bff;
+}
+
+.footer-logo a:hover {
+    opacity: 0.85;
+}
+
+.footer-text {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #495057;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #dc3545; 
+}
+
+.github-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* =========================================
+   11. АДАПТИВНОСТЬ (MEDIA QUERIES)
+   ========================================= */
+@media (max-width: 900px) {
+    .results-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-container {
+        grid-template-columns: 1fr;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        width: 170px;
+    }
+
+    .overlay h1 {
+        font-size: 42px;
+    }
+
+    .overlay p {
+        font-size: 20px;
+    }
+
+    .container h1 {
+        font-size: 38px;
+    }
+
+    .booking-search {
+        grid-template-columns: 1fr;
+    }
+
+    .card-images img {
+        height: 180px;
+    }
+
+    .apartment-main-image img {
+        height: 240px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .back-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .top-search-bar {
+        flex-direction: column;
+    }
+
+    .top-search-bar .btn {
+        width: 100%;
+    }
+}
+
+.container, 
+.results-layout, 
+.detail-container {
+    min-height: calc(100vh - 200px); 
+    box-sizing: border-box;
+}
+
+/* =========================================
+   12. КНОПКА "ВГОРУ" (SCROLL TO TOP)
+   ========================================= */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #0b7bd6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(11, 123, 214, 0.4);
+    
+    /* ЖОРСТКИЙ ФІКС ЦЕНТРУВАННЯ: обнуляємо падінги та включаємо флекс */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important; 
+    text-align: center;
+    
+    /* Стан "Приховано" */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    will-change: transform; /* Згладжує стрибки пікселів між станами */
+}
+
+/* Стан "Показано" (додається через JS) */
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ефект при наведенні мишкою, коли кнопка видима */
+.scroll-to-top.show:hover {
+    background-color: #085a9e;
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 6px 20px rgba(11, 123, 214, 0.6);
+}
+
+.scroll-to-top svg {
+    display: block;
+    margin: 0; /* Прибираємо будь-які зовнішні зсуви */
+    padding: 0;
+    width: 24px;
+    height: 24px;
+}
+
+/* Адаптивність: на телефонах робимо кнопку трохи меншою і ближче до краю */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }

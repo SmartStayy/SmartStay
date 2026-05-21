@@ -1,5 +1,16 @@
 export default class ApartmentModel {
 
+    async fetchAmenities() {
+        try {
+            const response = await fetch('/api/amenities');
+            const result = await response.json();
+            return result.success ? result.data : [];
+        } catch (error) {
+            console.error("Помилка завантаження зручностей з API:", error);
+            return [];
+        }
+    }
+
     async fetchApartments(filters = {}) {
         const params = new URLSearchParams();
 

@@ -30,6 +30,7 @@ class ApartmentModel {
             conditions.push('a.price_per_night <= ?');
             values.push(Number(filters.price_max));
         }
+        
         if (filters.rooms) {
             conditions.push('a.rooms >= ?');
             values.push(Number(filters.rooms));

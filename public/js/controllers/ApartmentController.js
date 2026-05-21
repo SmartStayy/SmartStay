@@ -7,14 +7,20 @@ export default class ApartmentController {
 
     async init() {
         if (!this.view.gridElement) return;
+        await this.loadAmenities();
         await this.loadApartments();
         this.bindEvents();
     }
 
+    async loadAmenities() {
+        const amenities = await this.model.fetchAmenities();
+        this.view.renderAmenities(amenities);
+    }
+
     async loadApartments() {
-        const filters = this.view.getFiltersData(); // Зібрали дані з HTML
-        const apartments = await this.model.fetchApartments(filters); // Відправили на сервер
-        this.view.renderApartments(apartments); // Намалювали результат
+        const filters = this.view.getFiltersData();
+        const apartments = await this.model.fetchApartments(filters);
+        this.view.renderApartments(apartments); 
     }
 
     bindEvents() {
@@ -31,11 +37,12 @@ export default class ApartmentController {
             });
         }
 
-        const btnReset = document.getElementById('btn-reset-filters');
-        if (btnReset) {
-            btnReset.addEventListener('click', async () => {
-                this.view.clearFilters(); 
-                await this.loadApartments(); 
+        const resetButton = 'btn-reset-filters';
+        const btn = document.getElementById(resetButton);
+        if (btn) {
+            btn.addEventListener('click', async () => {
+            this.view.clearFilters(); 
+            await this.loadApartments(); 
             });
         }
     } 

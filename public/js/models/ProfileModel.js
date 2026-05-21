@@ -4,7 +4,6 @@ export default class ProfileModel {
         try {
             const response = await fetch('/api/profile');
             const result = await response.json();
-            console.log("Результат с сервера в модели:", result); 
             return result.success ? result.data : null;
         } catch (error) {
             console.error("Помилка API профілю:", error);

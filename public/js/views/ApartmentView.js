@@ -2,6 +2,7 @@ export default class ApartmentView {
 
     get gridElement() { return document.getElementById('apartments-grid'); }
     get emptyState() { return document.getElementById('empty-state'); }
+    get amenitiesContainer() { return document.getElementById('amenities-container'); } // Новий гетер
 
     getFiltersData() {
         const amenityCheckboxes = document.querySelectorAll('input[name="amenity"]:checked');
@@ -25,6 +26,24 @@ export default class ApartmentView {
             if (el) el.value = '';
         });
         document.querySelectorAll('input[name="amenity"]').forEach(cb => cb.checked = false);
+    }
+
+    // Новий метод для відмальовки зручностей
+    renderAmenities(amenities) {
+        const container = this.amenitiesContainer;
+        if (!container) return;
+
+        if (amenities.length === 0) {
+            container.innerHTML = '<p>Немає доступних зручностей</p>';
+            return;
+        }
+
+        container.innerHTML = amenities.map(amenity => `
+            <label>
+                <input type="checkbox" name="amenity" value="${amenity.id}"> 
+                ${amenity.name}
+            </label>
+        `).join('');
     }
 
     renderApartments(apartments) {

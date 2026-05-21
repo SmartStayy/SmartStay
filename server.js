@@ -19,6 +19,9 @@ app.use('/api/auth', authRoutes);
 const apartmentRoutes = require('./routes/apartments');
 app.use('/api/apartments', apartmentRoutes);
 
+const amenityRoutes = require('./routes/amenities');
+app.use('/api/amenities', amenityRoutes);
+
 const profileRoutes = require('./routes/profile');
 app.use('/api/profile', profileRoutes);
 
