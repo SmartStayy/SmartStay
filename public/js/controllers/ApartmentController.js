@@ -37,12 +37,21 @@ export default class ApartmentController {
             });
         }
 
-        const resetButton = 'btn-reset-filters';
-        const btn = document.getElementById(resetButton);
-        if (btn) {
-            btn.addEventListener('click', async () => {
-            this.view.clearFilters(); 
-            await this.loadApartments(); 
+        // 1. Сброс только сайдбара
+        const btnResetSidebar = document.getElementById('btn-reset-filters');
+        if (btnResetSidebar) {
+            btnResetSidebar.addEventListener('click', async () => {
+                this.view.clearSidebarFilters(); 
+                await this.loadApartments(); 
+            });
+        }
+
+        // 2. Сброс только строки верхнего поиска
+        const btnResetTop = document.getElementById('btn-reset-top');
+        if (btnResetTop) {
+            btnResetTop.addEventListener('click', async () => {
+                this.view.clearTopSearch(); 
+                await this.loadApartments(); 
             });
         }
     } 

@@ -10,6 +10,8 @@ export default class ApartmentView {
 
         return {
             city: document.getElementById('search-city')?.value.trim() || '',
+            checkin: document.getElementById('search-checkin')?.value || '',  // Добавили заезд
+            checkout: document.getElementById('search-checkout')?.value || '',
             price_min: document.getElementById('filter-price-min')?.value || '',
             price_max: document.getElementById('filter-price-max')?.value || '',
             property_type: document.getElementById('filter-type')?.value || '',
@@ -19,8 +21,26 @@ export default class ApartmentView {
         };
     }
 
-    clearFilters() {
-        const ids = ['search-city', 'filter-price-min', 'filter-price-max', 'filter-type', 'filter-rooms', 'filter-rating'];
+    // clearFilters() {
+    //     const ids = ['search-city', 'filter-price-min', 'filter-price-max', 'filter-type', 'filter-rooms', 'filter-rating'];
+    //     ids.forEach(id => {
+    //         const el = document.getElementById(id);
+    //         if (el) el.value = '';
+    //     });
+    //     document.querySelectorAll('input[name="amenity"]').forEach(cb => cb.checked = false);
+    // }
+
+    clearTopSearch() {
+        const ids = ['search-city', 'search-checkin', 'search-checkout'];
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+        });
+    }
+
+    // 2. Очистка только боковых фильтров
+    clearSidebarFilters() {
+        const ids = ['filter-price-min', 'filter-price-max', 'filter-type', 'filter-rooms', 'filter-rating'];
         ids.forEach(id => {
             const el = document.getElementById(id);
             if (el) el.value = '';

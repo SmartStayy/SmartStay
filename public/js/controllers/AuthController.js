@@ -77,8 +77,7 @@ export default class AuthController {
 
     setupNavigation() {
         const actions = [
-            // { id: 'btn_go_to_login', url: '/login' },
-            { id: 'btn_go_to_login', url: '/search' },
+            { id: 'btn_go_to_login', url: '/login' },
             { id: 'btn_back_to_home', url: '/' },
             { id: 'btn_search', url: '/results' }
         ];

@@ -204,6 +204,22 @@ body {
     padding: 0 25px;
 }
 
+.top-search-bar .btn-danger-outline {
+    width: auto;             /* Отменяем 100% ширину */
+    padding: 14px 28px;      /* Выравниваем высоту с кнопкой "Знайти" */
+    margin-top: 0;           /* Убираем отступ сверху */
+    font-size: 17px;         /* Размер шрифта как у кнопки "Знайти" */
+    border-radius: 14px;     /* Скругление в стиле верхнего бара */
+}
+
+@media (max-width: 768px) {
+    /* На мобильных возвращаем кнопкам 100% ширину для удобного нажатия */
+    .top-search-bar .btn-danger-outline {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
 .results-content h1 {
     color: #0b3f84;
     font-size: 42px;
@@ -950,5 +966,70 @@ body {
         right: 20px;
         width: 45px;
         height: 45px;
+    }
+}
+
+/* =========================================
+   СТИЛІ ДЛЯ КАЛЕНДАРІВ У ПОШУКУ
+   ========================================= */
+.date-picker-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Щоб група дат не стискалася занадто сильно */
+    flex-shrink: 0; 
+}
+
+.date-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #0b3f84; /* Брендовий темно-синій колір */
+    white-space: nowrap; /* Забороняє слову переноситися на інший рядок */
+}
+
+.date-separator {
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.date-input {
+    padding: 12px 10px; /* Зробили трохи компактніше */
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    background-color: white;
+    color: #495057;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Ефект фокусу, як у головного інпуту */
+.date-input:focus {
+    border-color: #0b7bd6;
+    box-shadow: 0 0 0 3px rgba(11, 123, 214, 0.1);
+}
+
+/* Змінюємо колір іконки календаря всередині інпуту (працює в Chrome/Edge) */
+::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .date-picker-group {
+        width: 100%;
+        flex-direction: row; /* На телефонах залишаємо в рядок, але ділимо ширину навпіл */
+    }
+    
+    .date-input {
+        width: 100%;
     }
 }
