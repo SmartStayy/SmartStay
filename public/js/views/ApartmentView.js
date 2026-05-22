@@ -2,7 +2,7 @@ export default class ApartmentView {
 
     get gridElement() { return document.getElementById('apartments-grid'); }
     get emptyState() { return document.getElementById('empty-state'); }
-    get amenitiesContainer() { return document.getElementById('amenities-container'); } // Новий гетер
+    get amenitiesContainer() { return document.getElementById('amenities-container'); } 
 
     getFiltersData() {
         const amenityCheckboxes = document.querySelectorAll('input[name="amenity"]:checked');
@@ -10,7 +10,7 @@ export default class ApartmentView {
 
         return {
             city: document.getElementById('search-city')?.value.trim() || '',
-            checkin: document.getElementById('search-checkin')?.value || '',  // Добавили заезд
+            checkin: document.getElementById('search-checkin')?.value || '',  
             checkout: document.getElementById('search-checkout')?.value || '',
             price_min: document.getElementById('filter-price-min')?.value || '',
             price_max: document.getElementById('filter-price-max')?.value || '',
@@ -21,15 +21,6 @@ export default class ApartmentView {
         };
     }
 
-    // clearFilters() {
-    //     const ids = ['search-city', 'filter-price-min', 'filter-price-max', 'filter-type', 'filter-rooms', 'filter-rating'];
-    //     ids.forEach(id => {
-    //         const el = document.getElementById(id);
-    //         if (el) el.value = '';
-    //     });
-    //     document.querySelectorAll('input[name="amenity"]').forEach(cb => cb.checked = false);
-    // }
-
     clearTopSearch() {
         const ids = ['search-city', 'search-checkin', 'search-checkout'];
         ids.forEach(id => {
@@ -38,7 +29,6 @@ export default class ApartmentView {
         });
     }
 
-    // 2. Очистка только боковых фильтров
     clearSidebarFilters() {
         const ids = ['filter-price-min', 'filter-price-max', 'filter-type', 'filter-rooms', 'filter-rating'];
         ids.forEach(id => {
@@ -48,7 +38,6 @@ export default class ApartmentView {
         document.querySelectorAll('input[name="amenity"]').forEach(cb => cb.checked = false);
     }
 
-    // Новий метод для відмальовки зручностей
     renderAmenities(amenities) {
         const container = this.amenitiesContainer;
         if (!container) return;

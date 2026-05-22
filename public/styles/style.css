@@ -205,15 +205,14 @@ body {
 }
 
 .top-search-bar .btn-danger-outline {
-    width: auto;             /* Отменяем 100% ширину */
-    padding: 14px 28px;      /* Выравниваем высоту с кнопкой "Знайти" */
-    margin-top: 0;           /* Убираем отступ сверху */
-    font-size: 17px;         /* Размер шрифта как у кнопки "Знайти" */
-    border-radius: 14px;     /* Скругление в стиле верхнего бара */
+    width: auto;             
+    padding: 14px 28px;     
+    margin-top: 0;           
+    font-size: 17px;         
+    border-radius: 14px;     
 }
 
 @media (max-width: 768px) {
-    /* На мобильных возвращаем кнопкам 100% ширину для удобного нажатия */
     .top-search-bar .btn-danger-outline {
         width: 100%;
         margin-top: 10px;
@@ -258,9 +257,31 @@ body {
 .filters-sidebar {
     background: white;
     padding: 25px;
-    border-radius: 24px;
+    border-radius: 24px 6px 6px 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     align-self: start;
+
+    position: sticky;
+    top: 100px; 
+    max-height: calc(100vh - 130px); 
+    overflow-y: auto;
+}
+
+.filters-sidebar::-webkit-scrollbar {
+    width: 6px; 
+}
+
+.filters-sidebar::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.filters-sidebar::-webkit-scrollbar-thumb {
+    background: #cfcfcf; 
+    border-radius: 10px; 
+}
+
+.filters-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #0b7bd6; 
 }
 
 .filters-sidebar h2 {
@@ -338,7 +359,6 @@ body {
     font-size: 17px;
 }
 
-/* Старый блок поиска на главной (оставлен для обратной совместимости) */
 .booking-search {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -358,6 +378,7 @@ body {
 /* =========================================
    6. КАРТОЧКИ КВАРТИР И БРОНИРОВАНИЙ
    ========================================= */
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -426,6 +447,7 @@ body {
 /* =========================================
    7. ДЕТАЛЬНАЯ СТРАНИЦА КВАРТИРЫ
    ========================================= */
+
 .apartment-card {
     max-width: 850px;
     margin: 0 auto;
@@ -554,7 +576,7 @@ body {
     border-radius: 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     position: sticky;
-    top: 100px; /* Немного опустили, чтобы не слипалось со sticky nav */
+    top: 100px; 
     text-align: center;
 }
 
@@ -574,6 +596,7 @@ body {
 /* =========================================
    8. КНОПКИ
    ========================================= */
+
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -726,6 +749,7 @@ body {
 /* =========================================
    9. СОСТОЯНИЕ "ПУСТО" (EMPTY STATE)
    ========================================= */
+
 .empty-state {
     text-align: center;
     background: white;
@@ -759,6 +783,7 @@ body {
 /* =========================================
    10. ФУТЕР (FOOTER)
    ========================================= */
+
 .main-footer {
     background-color: #ffffff;
     border-top: 1px solid #e9ecef;
@@ -824,6 +849,7 @@ body {
 /* =========================================
    11. АДАПТИВНОСТЬ (MEDIA QUERIES)
    ========================================= */
+
 @media (max-width: 900px) {
     .results-layout {
         grid-template-columns: 1fr;
@@ -909,6 +935,7 @@ body {
 /* =========================================
    12. КНОПКА "ВГОРУ" (SCROLL TO TOP)
    ========================================= */
+
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
@@ -922,29 +949,25 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(11, 123, 214, 0.4);
     
-    /* ЖОРСТКИЙ ФІКС ЦЕНТРУВАННЯ: обнуляємо падінги та включаємо флекс */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     padding: 0 !important; 
     text-align: center;
     
-    /* Стан "Приховано" */
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    will-change: transform; /* Згладжує стрибки пікселів між станами */
+    will-change: transform; 
 }
 
-/* Стан "Показано" (додається через JS) */
 .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-/* Ефект при наведенні мишкою, коли кнопка видима */
 .scroll-to-top.show:hover {
     background-color: #085a9e;
     transform: translateY(-3px) scale(1.05); 
@@ -953,13 +976,12 @@ body {
 
 .scroll-to-top svg {
     display: block;
-    margin: 0; /* Прибираємо будь-які зовнішні зсуви */
+    margin: 0; 
     padding: 0;
     width: 24px;
     height: 24px;
 }
 
-/* Адаптивність: на телефонах робимо кнопку трохи меншою і ближче до краю */
 @media (max-width: 768px) {
     .scroll-to-top {
         bottom: 20px;
@@ -972,19 +994,19 @@ body {
 /* =========================================
    СТИЛІ ДЛЯ КАЛЕНДАРІВ У ПОШУКУ
    ========================================= */
+
 .date-picker-group {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Щоб група дат не стискалася занадто сильно */
     flex-shrink: 0; 
 }
 
 .date-label {
     font-size: 15px;
     font-weight: bold;
-    color: #0b3f84; /* Брендовий темно-синій колір */
-    white-space: nowrap; /* Забороняє слову переноситися на інший рядок */
+    color: #0b3f84; 
+    white-space: nowrap; 
 }
 
 .date-separator {
@@ -993,7 +1015,7 @@ body {
 }
 
 .date-input {
-    padding: 12px 10px; /* Зробили трохи компактніше */
+    padding: 12px 10px; 
     border: 1px solid #cfcfcf;
     border-radius: 12px;
     font-size: 15px;
@@ -1005,13 +1027,11 @@ body {
     cursor: pointer;
 }
 
-/* Ефект фокусу, як у головного інпуту */
 .date-input:focus {
     border-color: #0b7bd6;
     box-shadow: 0 0 0 3px rgba(11, 123, 214, 0.1);
 }
 
-/* Змінюємо колір іконки календаря всередині інпуту (працює в Chrome/Edge) */
 ::-webkit-calendar-picker-indicator {
     cursor: pointer;
     opacity: 0.6;
@@ -1022,11 +1042,10 @@ body {
     opacity: 1;
 }
 
-/* Адаптивність для мобільних пристроїв */
 @media (max-width: 768px) {
     .date-picker-group {
         width: 100%;
-        flex-direction: row; /* На телефонах залишаємо в рядок, але ділимо ширину навпіл */
+        flex-direction: row; 
     }
     
     .date-input {

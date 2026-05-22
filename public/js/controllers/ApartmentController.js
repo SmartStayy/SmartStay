@@ -37,7 +37,6 @@ export default class ApartmentController {
             });
         }
 
-        // 1. Сброс только сайдбара
         const btnResetSidebar = document.getElementById('btn-reset-filters');
         if (btnResetSidebar) {
             btnResetSidebar.addEventListener('click', async () => {
@@ -46,7 +45,6 @@ export default class ApartmentController {
             });
         }
 
-        // 2. Сброс только строки верхнего поиска
         const btnResetTop = document.getElementById('btn-reset-top');
         if (btnResetTop) {
             btnResetTop.addEventListener('click', async () => {

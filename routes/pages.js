@@ -23,11 +23,7 @@ router.get('/register', (req, res) => {
     res.sendFile(path.join(publicPath, 'register.html'));
 });
 
-// router.get('/search', verifyToken, (req, res) => {
-//     res.sendFile(path.join(publicPath, 'search.html')); 
-// });
-
-router.get('/search', (req, res) => {
+router.get('/search', verifyToken, (req, res) => {
     res.sendFile(path.join(publicPath, 'search.html')); 
 });
 

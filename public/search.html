@@ -26,7 +26,7 @@
                     <label>Від: <input type="number" id="filter-price-min" placeholder="0" min="0"></label>
                     <label>До: <input type="number" id="filter-price-max" placeholder="10000" min="0"></label>
                 </div>
-                
+        
                 <div class="filter-block">
                     <h3>Тип житла</h3>
                     <select id="filter-type" class="filter-select">
@@ -37,12 +37,12 @@
                         <option value="hostel">Хостел</option>
                     </select>
                 </div>
-
+        
                 <div class="filter-block">
                     <h3>Кімнат</h3>
                     <input type="number" id="filter-rooms" min="1" placeholder="Будь-яка кількість">
                 </div>
-
+        
                 <div class="filter-block">
                     <h3>Мінімальний рейтинг</h3>
                     <select id="filter-rating" class="filter-select">
@@ -52,14 +52,14 @@
                         <option value="7">7+ Добре</option>
                     </select>
                 </div>
-                
+        
                 <div class="filter-block">
                     <h3>Зручності</h3>
                     <div class="amenities-checklist" id="amenities-container">
                         <span class="loading-text">Завантаження...</span>
                     </div>
                 </div>
-
+        
                 <button type="submit" class="btn btn-apply-filters">Застосувати фільтри</button>
                 <button type="button" id="btn-reset-filters" class="btn btn-danger-outline">Скинути фільтри</button>
             </form>
@@ -73,8 +73,6 @@
                 <div class="date-picker-group">
                     <label for="search-checkin" class="date-label">Заїзд:</label>
                     <input type="date" id="search-checkin" class="date-input" required>
-            
-                    <span class="date-separator">-</span>
             
                     <label for="search-checkout" class="date-label">Виїзд:</label>
                     <input type="date" id="search-checkout" class="date-input" required>
@@ -92,7 +90,6 @@
                 <div class="empty-icon">🔍</div>
                 <h3>За вашим запитом нічого не знайдено</h3>
                 <p>Спробуйте змінити місто, розширити діапазон цін або прибрати деякі фільтри.</p>
-                <!-- <button id="btn-reset-filters" class="btn btn-outline">Скинути всі фільтри</button> -->
             </div>
         </main>
     </div>
