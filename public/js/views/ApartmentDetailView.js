@@ -1,5 +1,6 @@
 export default class ApartmentDetailView {
     get container() { return document.querySelector('.detail-container'); }
+    get bookBtn() { return document.getElementById('btn-book-apartment'); }
 
     render(apartment) {
         if (!this.container) return; 
@@ -44,4 +45,43 @@ export default class ApartmentDetailView {
             amenitiesList.innerHTML = '<li>Зручності не вказані</li>';
         }
     }
+
+    bindBookApartment(handler) {
+        if (!this.bookBtn) return;
+        this.bookBtn.addEventListener('click', () => handler());
+    }
+
+    setBookingButtonState(state) {
+        const btn = this.bookBtn;
+        if (!btn) return;
+
+        switch (state) {
+            case 'loading':
+                btn.dataset.originalText = btn.innerHTML;
+                btn.innerHTML = 'Обробка...';
+                btn.disabled = true;
+                btn.classList.add('loading');
+                break;
+                
+            case 'success':
+                btn.innerHTML = 'Заброньовано';
+                btn.classList.remove('loading');
+                btn.classList.add('success');
+                break;
+
+            case 'already_booked':
+                btn.innerHTML = 'Вже заброньовано';
+                btn.disabled = true;
+                btn.classList.remove('loading');
+                btn.style.background = '#6c757d'; 
+                break;
+
+            case 'reset':
+                btn.innerHTML = btn.dataset.originalText || 'Забронювати';
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                break;
+        }
+    }
+
 }

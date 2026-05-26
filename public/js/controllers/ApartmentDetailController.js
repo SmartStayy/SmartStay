@@ -1,7 +1,10 @@
+import ModalManager from '../ModalManager.js';
+
 export default class ApartmentDetailController {
     constructor(model, view) {
         this.model = model;
         this.view = view;
+        this.modal = new ModalManager();
         this.init();
     }
 
@@ -17,40 +20,46 @@ export default class ApartmentDetailController {
         }
 
         const apartmentData = await this.model.fetchApartmentById(apartmentId);
-
         this.view.render(apartmentData);
-        this.setupBookingButton(apartmentId);
+        
+        this.view.bindBookApartment(() => this.handleBooking(apartmentId));
     }
 
-    setupBookingButton(apartmentId) {
-        const bookBtn = document.getElementById('btn-book-apartment');
-        if (!bookBtn) return;
+    async handleBooking(apartmentId) {
+        // Кажемо View показати стан завантаження
+        this.view.setBookingButtonState('loading');
 
-        bookBtn.addEventListener('click', async () => {
-            const originalText = bookBtn.innerHTML;
-            bookBtn.innerHTML = 'Обробка...';
-            bookBtn.disabled = true;
-            bookBtn.classList.add('loading');
+        // Звертаємось до Моделі
+        const result = await this.model.bookApartment(apartmentId);
 
-            const result = await this.model.bookApartment(apartmentId);
+        if (result.success) {
+            this.view.setBookingButtonState('success');
+            await this.modal.alert('Успіх!', 'Житло успішно заброньовано. Ви можете переглянути деталі у своєму профілі.');
+            return;
+        }
 
-            if (result.success) {
-                bookBtn.innerHTML = 'Заброньовано';
-                bookBtn.classList.remove('loading');
-                bookBtn.classList.add('success');
-            } else {
-                bookBtn.classList.remove('loading');
-
-                if (result.message === 'Це житло вже заброньовано.') {
-                    bookBtn.innerHTML = 'Вже заброньовано';
-                    bookBtn.disabled = true;
-                    bookBtn.style.background = '#6c757d';
-                } else {
-                    alert(result.message || 'Виникла помилка під час бронювання.');
-                    bookBtn.innerHTML = originalText;
-                    bookBtn.disabled = false;
-                }
+        // Обробка помилок
+        if (result.status === 401) {
+            // Скидаємо кнопку до початкового стану
+            this.view.setBookingButtonState('reset');
+            
+            // Запитуємо користувача через наш крутий попап
+            const goLogin = await this.modal.confirm(
+                'Потрібна авторизація', 
+                'Щоб забронювати житло, вам необхідно увійти в систему. Перейти на сторінку входу?'
+            );
+            
+            if (goLogin) {
+                window.location.href = '/login';
             }
-        });
+        } 
+        else if (result.message === 'Це житло вже заброньовано.') {
+            this.view.setBookingButtonState('already_booked');
+            await this.modal.alert('Увага', result.message);
+        } 
+        else {
+            this.view.setBookingButtonState('reset');
+            await this.modal.alert('Помилка', result.message || 'Виникла помилка під час бронювання.');
+        }
     }
 }

@@ -84,4 +84,29 @@ export default class ApartmentView {
             </div>
         `).join('');
     }
+
+    showSearchError(message) {
+        const errorDiv = document.getElementById('search-error-message');
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+    }
+
+    hideSearchError() {
+        const errorDiv = document.getElementById('search-error-message');
+        errorDiv.style.display = 'none';
+    }
+
+    validateDates(checkin, checkout) {
+        if ((checkin && !checkout) || (!checkin && checkout)) {
+            this.showSearchError('Оберіть обидві дати!');
+            return false;
+        }
+        if (checkin && checkout && new Date(checkin) >= new Date(checkout)) {
+            this.showSearchError('Дата виїзду має бути пізніше дати заїзду!');
+            return false;
+        }
+        this.hideSearchError();
+        return true;
+    }
+
 }

@@ -19,20 +19,25 @@ export default class ApartmentController {
 
     async loadApartments() {
         const filters = this.view.getFiltersData();
-        const apartments = await this.model.fetchApartments(filters);
-        this.view.renderApartments(apartments); 
+        if (this.view.validateDates(filters.checkin, filters.checkout)) {
+            const apartments = await this.model.fetchApartments(filters);
+            this.view.renderApartments(apartments); 
+        }
     }
 
     bindEvents() {
         const btnMainSearch = document.getElementById('btn-main-search');
+        const filters = this.view.getFiltersData();
         if (btnMainSearch) {
-            btnMainSearch.addEventListener('click', () => this.loadApartments());
+            btnMainSearch.addEventListener('click', () => {
+                this.loadApartments();
+            });
         }
 
         const filterForm = document.getElementById('filter-form');
         if (filterForm) {
             filterForm.addEventListener('submit', (e) => {
-                e.preventDefault(); 
+                e.preventDefault();
                 this.loadApartments();
             });
         }

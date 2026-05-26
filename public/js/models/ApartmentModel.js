@@ -46,24 +46,23 @@ export default class ApartmentModel {
     }
 
     async bookApartment(apartmentId) {
-    try {
-        const response = await fetch('/api/bookings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ apartmentId })
-        });
-        
-        if (response.status === 401) {
-            window.location.href = '/login';
-            return { success: false, message: 'Потрібна авторизація' };
-        }
+        try {
+            const response = await fetch('/api/bookings', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ apartmentId })
+            });
+            
+            if (response.status === 401 || (response.redirected && response.url.includes('/login'))) {
+                return { success: false, status: 401, message: 'Потрібна авторизація' };
+            }
 
-        return await response.json();
-    } catch (error) {
-        console.error("Помилка бронювання:", error);
-        return { success: false, message: "Помилка з'єднання з сервером" };
+            return await response.json();
+        } catch (error) {
+            console.error("Помилка бронювання:", error);
+            return { success: false, message: "Помилка з'єднання з сервером" };
+        }
     }
-}
 }
