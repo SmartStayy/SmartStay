@@ -8,8 +8,8 @@
 }
 
 body {
-    font-family: Bookman, URW Bookman L, serif;
-    background-color: #f4f6fb;
+    font-family: Garamond, serif;
+    background-color: #95b2ee;
     color: #1d1d1d;
 }
 
@@ -36,14 +36,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 60px;
-    background: #ffffff; 
+    background: #4f71b0; 
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .nav-logo {
     font-size: 30px;
     font-weight: bold;
-    color: #0b3f84;
+    color: #dee6ee;
 }
 
 .nav-logo a {
@@ -64,13 +64,13 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #0b3f84;
+    color: #dee6ee;
     font-weight: bold;
     font-size: 17px;
 }
 
 .nav-links a:hover {
-    color: #0b7bd6;
+    color: #dee6ee;
 }
 
 /* =========================================
@@ -78,7 +78,7 @@ body {
    ========================================= */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(to right, #4facfe, #00c6ff);
+    background: linear-gradient(to right, #95b2ee, #95b2ee);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ body {
 }
 
 .overlay {
-    background: rgba(255, 255, 255, 0.18);
+    background: #4f72b8;
     padding: 45px;
     border-radius: 24px;
     backdrop-filter: blur(10px);
@@ -229,7 +229,7 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 25px;
-    background: white;
+    background: rgb(172, 206, 255);
     padding: 15px;
     border-radius: 16px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
@@ -266,7 +266,7 @@ body {
 }
 
 .filters-sidebar {
-    background: white;
+    background: rgb(172, 206, 255);
     padding: 25px;
     border-radius: 24px 6px 6px 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -287,7 +287,7 @@ body {
 }
 
 .filters-sidebar::-webkit-scrollbar-thumb {
-    background: #cfcfcf; 
+    background: #fff7f7; 
     border-radius: 10px; 
 }
 
@@ -409,7 +409,7 @@ body {
 }
 
 .card {
-    background: white;
+    background:rgb(172, 206, 255);
     border-radius: 24px;
     padding: 24px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
@@ -538,8 +538,8 @@ body {
 }
 
 .address {
-    font-size: 18px;
-    color: #666;
+    font-size: 20px;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -548,7 +548,7 @@ body {
     background: #0b7bd6;
     color: white;
     padding: 8px 16px;
-    border-radius: 12px;
+    border-radius: 14px;
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -613,8 +613,8 @@ body {
 .btn {
     display: inline-block;
     text-decoration: none;
-    background: #0b7bd6;
-    color: white;
+    background: #f5f8fb;
+    color: rgb(15, 7, 133);
     padding: 14px 28px;
     border-radius: 14px;
     font-size: 17px;
@@ -625,7 +625,7 @@ body {
 }
 
 .btn:hover {
-    background: #0862ab;
+    background: #8fc6f0;
     transform: translateY(-2px);
 }
 
@@ -765,7 +765,7 @@ body {
 
 .empty-state {
     text-align: center;
-    background: white;
+    background: rgb(172, 206, 255);
     padding: 60px 20px;
     border-radius: 24px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
@@ -798,8 +798,8 @@ body {
    ========================================= */
 
 .main-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #e9ecef;
+    background-color: #4f71b0;
+    border-top: 1px solid #13202d;
     padding: 20px 0;
     width: 100%;
     margin-top: 0;
@@ -826,7 +826,7 @@ body {
     text-decoration: none; 
     color: inherit;        
     outline: none;
-    color: #007bff;
+    color: #dee6ee;
 }
 
 .footer-logo a:hover {
@@ -834,13 +834,13 @@ body {
 }
 
 .footer-text {
-    color: #6c757d;
+    color: #dee6ee;
     font-size: 14px;
     margin: 0;
 }
 
 .footer-links a {
-    color: #495057;
+    color: #dee6ee;
     text-decoration: none;
     font-size: 14px;
     display: flex;
@@ -1036,7 +1036,7 @@ body {
     transition: 0.3s;
     background-color: white;
     color: #495057;
-    font-family: inherit;
+    font-family: Garamond, serif;;
     cursor: pointer;
 }
 
@@ -1266,7 +1266,7 @@ body {
     font-size: 16px; /* Текст всередині трохи більший */
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
-    font-family: inherit;
+    font-family: Garamond, serif;;
     background-color: white;
 }
 
